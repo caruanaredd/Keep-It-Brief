@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D player;
+
+    public Direction direction { get; private set; } = Direction.Down;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +27,28 @@ public class Movement : MonoBehaviour
         // movement.Normalize();
 
         player.velocity = movement * speed;
+
+        if (movement == Vector2.zero)
+        {
+            return;
+        }
+
+        if (movement.x > 0)
+        {
+            direction = Direction.Right;
+        }
+        else if (movement.x < 0)
+        {
+            direction = Direction.Left;
+        }
+
+        if (movement.y > 0)
+        {
+            direction = Direction.Up;
+        }
+        else if (movement.y < 0)
+        {
+            direction = Direction.Down;
+        }
     }
 }
