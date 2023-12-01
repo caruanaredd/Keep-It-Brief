@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7177622406842755586, guid: 1931e6aeb21a445e1a7178a7402e497b, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7887634345114797942, guid: 1931e6aeb21a445e1a7178a7402e497b, type: 3}
       propertyPath: m_IsActive
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 997233383}
   m_Layer: 0
   m_Name: BOX
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77a2a41bddbd4052af24e936c70bd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 0.5
 --- !u!212 &997233381
 SpriteRenderer:
   m_ObjectHideFlags: 0
