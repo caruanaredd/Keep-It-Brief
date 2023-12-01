@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +12,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D player;
 
     public Direction direction { get; private set; } = Direction.Down;
+
+    public bool hasControl { get; private set; } = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +30,10 @@ public class Movement : MonoBehaviour
         // Vector2 movement = new Vector2(horizontal, vertical);
         // movement.Normalize();
 
-        player.velocity = movement * speed;
+        if (hasControl)
+        {
+            player.velocity = movement * speed;
+        }
 
         if (movement == Vector2.zero)
         {
@@ -49,6 +56,35 @@ public class Movement : MonoBehaviour
         else if (movement.y < 0)
         {
             direction = Direction.Down;
+        }
+    }
+
+    public void Push(Direction dir)
+    {
+        player.velocity = dir.ToVector2() * speed;
+        hasControl = false;
+    }
+
+    public void Stop()
+    {
+        hasControl = true;
+        player.velocity = Vector2.zero;
+    }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Tile"))
+        {
+            if (Vector2.Distance(transform.position, other.transform.position) > 0.5f)
+                return;
+
+            TileBase tile = other.GetComponent<TileBase>();
+            tile.Trigger(this);
         }
     }
 }
