@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Welcome.unity
+    guid: 7c0562bec04734d00bc59da5772de0e7
+  - enabled: 1
+    path: Assets/Scenes/BoxPushing.unity
+    guid: f34e03a4dfc05c1468178daebb380c85
+  - enabled: 1
+    path: Assets/Scenes/CharSelection.unity
+    guid: 1eef4fe9004594d15901b78c9b8e8664
+  - enabled: 1
+    path: Assets/Scenes/Hall.unity
+    guid: fe8aec4940ae14a47bc62c6d7349096b
+  - enabled: 1
+    path: Assets/Scenes/Interaction.unity
+    guid: b19cdccf73ed5cc4a870185e905fc02c
+  - enabled: 1
+    path: Assets/Scenes/TileTesting.unity
+    guid: 1c2e91f203278594c9f52371dd014962
   m_configObjects: {}
