@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectible
   - Tile
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1539916749
+    locked: 0
+  - name: Players
+    uniqueID: 573387731
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
