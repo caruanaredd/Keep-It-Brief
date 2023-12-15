@@ -10,6 +10,8 @@ public class Interaction : MonoBehaviour
 
     private Movement movement;
 
+    private Transform heldObject;
+
     void Awake()
     {
         movement = GetComponent<Movement>();
@@ -22,7 +24,15 @@ public class Interaction : MonoBehaviour
 
         if (isPressed)
         {
-            StartCoroutine(DisableInteraction());
+            if (heldObject == null)
+            {
+                StartCoroutine(DisableInteraction());
+            }
+            else
+            {
+                heldObject.SetParent(null);
+                heldObject = null;
+            }
         }
         else
         {
@@ -35,5 +45,13 @@ public class Interaction : MonoBehaviour
         interaction.transform.localPosition = movement.direction.ToVector2();
         yield return new WaitForSeconds(0.25f);
         interaction.transform.localPosition = Vector2.zero;
+    }
+
+    public void Hold(Transform obj)
+    {
+        if (heldObject != null)
+            return;
+
+        heldObject = obj;
     }
 }
