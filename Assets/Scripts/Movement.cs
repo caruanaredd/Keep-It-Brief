@@ -4,6 +4,7 @@ using System.Diagnostics;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
@@ -57,6 +58,8 @@ public class Movement : MonoBehaviour
         {
             direction = Direction.Down;
         }
+
+        //Animator.SetInt("Direction", (int)direction);
     }
 
     public void Push(Direction dir)
@@ -74,6 +77,8 @@ public class Movement : MonoBehaviour
     public void Kill()
     {
         Destroy(gameObject);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
     void OnTriggerStay2D(Collider2D other)
