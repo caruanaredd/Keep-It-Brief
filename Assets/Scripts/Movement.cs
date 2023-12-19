@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D player;
+    private SpriteRenderer playerR;
 
     public Direction direction { get; private set; } = Direction.Down;
 
@@ -20,6 +21,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>(); 
+        playerR = GetComponent<SpriteRenderer>();
     }
 
     void OnMove(InputValue value)
@@ -44,10 +46,12 @@ public class Movement : MonoBehaviour
         if (movement.x > 0)
         {
             direction = Direction.Right;
+            playerR.flipX = false;
         }
         else if (movement.x < 0)
         {
             direction = Direction.Left;
+            playerR.flipX = true;
         }
 
         if (movement.y > 0)
