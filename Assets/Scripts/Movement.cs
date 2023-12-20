@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public float speed;
     private Rigidbody2D player;
     private SpriteRenderer playerR;
+    private Animator myAnimation;
 
     public Direction direction { get; private set; } = Direction.Down;
 
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>(); 
         playerR = GetComponent<SpriteRenderer>();
+        myAnimation = GetComponent<Animator>();
     }
 
     void OnMove(InputValue value)
@@ -62,6 +64,8 @@ public class Movement : MonoBehaviour
         {
             direction = Direction.Down;
         }
+        myAnimation.SetFloat("Xaxis", movement.x);
+        myAnimation.SetFloat("Yaxis", movement.y);
 
         //Animator.SetInt("Direction", (int)direction);
     }
@@ -96,4 +100,10 @@ public class Movement : MonoBehaviour
             tile.Trigger(this);
         }
     }
+
+
+
+
+
+
 }
