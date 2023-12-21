@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+
         Vector2 movement = value.Get<Vector2>();
         // float horizontal = Input.GetAxis("Horizontal");
         // float vertical = Input.GetAxis("Vertical");
@@ -68,6 +69,7 @@ public class Movement : MonoBehaviour
         myAnimation.SetFloat("Yaxis", movement.y);
 
         //Animator.SetInt("Direction", (int)direction);
+
     }
 
     public void Push(Direction dir)
