@@ -43,6 +43,8 @@ public class Movement : MonoBehaviour
 
         if (movement == Vector2.zero)
         {
+            myAnimation.SetFloat("Xaxis", 0);
+            myAnimation.SetFloat("Yaxis", 0);
             return;
         }
 

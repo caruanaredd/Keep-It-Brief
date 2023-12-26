@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 2bb7b223538f21d4baa8f6085c0fedae
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bloo_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 385
+        width: 148
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5410883, y: 0.1292056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05b94454927d424eba8dc61285a82b3
+      internalID: -1745282193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 385
+        width: 144
+        height: 249
+      alignment: 9
+      pivot: {x: 0.62668884, y: 0.12669526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74aeecd35f405114ab1b493a394fd2de
+      internalID: 1651755567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 385
+        width: 143
+        height: 249
+      alignment: 9
+      pivot: {x: 0.59719956, y: 0.13018419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b987be2b51209184a950a15a24f7c1a4
+      internalID: 329136698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 385
+        width: 143
+        height: 249
+      alignment: 9
+      pivot: {x: 0.43317503, y: 0.13716157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b20415c25c14cd42aff26d993c36ad8
+      internalID: 892616062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 385
+        width: 144
+        height: 253
+      alignment: 9
+      pivot: {x: 0.42157406, y: 0.14976569}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e684954018824149afe8b77bb3d72b9
+      internalID: 1208190719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 385
+        width: 153
+        height: 256
+      alignment: 9
+      pivot: {x: 0.3694087, y: 0.14029634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29435b507a9b4c489e98fd168a34472
+      internalID: -1767827803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 385
+        width: 145
+        height: 253
+      alignment: 9
+      pivot: {x: 0.37418675, y: 0.14633226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670d3074c344088479dfc5776f3c6ec5
+      internalID: -420301409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 97
+        width: 143
+        height: 242
+      alignment: 9
+      pivot: {x: 0.4635504, y: 0.14461511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f1301727d6cd64fa3399ffb66a36ef
+      internalID: 137070884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 97
+        width: 144
+        height: 249
+      alignment: 9
+      pivot: {x: 0.45173773, y: 0.13716169}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a1192c2d587a94899428f0525e740b
+      internalID: -218387156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 97
+        width: 143
+        height: 249
+      alignment: 9
+      pivot: {x: 0.43317547, y: 0.13367294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a0cac286307b84884fe3c8f4bcf63d
+      internalID: 227926211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 100
+        width: 143
+        height: 250
+      alignment: 9
+      pivot: {x: 0.42102692, y: 0.1386131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a01de3a29566374ca9f5e53eb467064
+      internalID: -2014991743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 100
+        width: 145
+        height: 250
+      alignment: 9
+      pivot: {x: 0.42810732, y: 0.14208789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389e369df75761a45b50cd6ecd44f521
+      internalID: -1521898187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 100
+        width: 144
+        height: 250
+      alignment: 9
+      pivot: {x: 0.4276072, y: 0.14208789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2e6e22b1af87541a168b3bb742346d
+      internalID: 1658186505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 100
+        width: 145
+        height: 252
+      alignment: 9
+      pivot: {x: 0.42211494, y: 0.13458675}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ff5313af18b3f479ede2c382584521
+      internalID: 645561198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bloo_Idle_0: -1745282193
+      Bloo_Idle_1: 1651755567
+      Bloo_Idle_10: -2014991743
+      Bloo_Idle_11: -1521898187
+      Bloo_Idle_12: 1658186505
+      Bloo_Idle_13: 645561198
+      Bloo_Idle_2: 329136698
+      Bloo_Idle_3: 892616062
+      Bloo_Idle_4: 1208190719
+      Bloo_Idle_5: -1767827803
+      Bloo_Idle_6: -420301409
+      Bloo_Idle_7: 137070884
+      Bloo_Idle_8: -218387156
+      Bloo_Idle_9: 227926211
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
