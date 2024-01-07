@@ -11,6 +11,7 @@
     <setting file="file://$PROJECT_DIR$/../Astro/Assets/Scripts/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Direction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2cf5e94b2c4c43a6b4e1eb3ceb5995fd173e00/73/7d37fbde/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,6 +87,9 @@
       <workItem from="1702316797300" duration="475000" />
       <workItem from="1702319148031" duration="4331000" />
       <workItem from="1702491238357" duration="847000" />
+      <workItem from="1704216593968" duration="2724000" />
+      <workItem from="1704366795753" duration="2749000" />
+      <workItem from="1704462148798" duration="8563000" />
     </task>
     <servers />
   </component>
