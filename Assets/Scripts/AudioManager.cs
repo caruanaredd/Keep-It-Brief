@@ -16,10 +16,10 @@ public class AudioManager : MonoBehaviour
     public AudioSource CreepyBGM;
 
     private float distanceTravelled = 0f;
-    private Transform playerTransform;
-    public float maxVolume = 1f;
-    public float minVolume = 0f;
-    public float maxDistance = 5f;
+    //private Transform playerTransform;
+    //public float maxVolume = 1f;
+    //public float minVolume = 0f;
+    //public float maxDistance = 5f;
 
     private void Awake()
     {
@@ -50,31 +50,31 @@ public class AudioManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the scene loaded event
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
 
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        //playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
     {
         // Update the distance travelled based on player position
-        if (playerTransform != null)
-        {
-            distanceTravelled = playerTransform.position.magnitude;
-        }
+        //if (playerTransform != null)
+        //{
+            //distanceTravelled = playerTransform.position.magnitude;
+        //}
 
         // Adjust the volume based on distance travelled
-        AdjustVolume();
+        
     }
 
-    private void AdjustVolume()
-    {
+    //private void AdjustVolume()
+    //{
         // Assuming that both songs have the same volume control in the Audio Mixer
-        float normalizedVolume = Mathf.Clamp01(distanceTravelled / maxDistance);
-        float volume = Mathf.Lerp(minVolume, maxVolume, normalizedVolume);
+        //float normalizedVolume = Mathf.Clamp01(distanceTravelled / maxDistance);
+       // float volume = Mathf.Lerp(minVolume, maxVolume, normalizedVolume);
 
         // Set the volume for both audio sources
-        CreepyBGM.volume = volume;
-        backgroundMusicSource.volume = volume;
-    }
+        //CreepyBGM.volume = volume;
+        //backgroundMusicSource.volume = volume;
+    //}//
 
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

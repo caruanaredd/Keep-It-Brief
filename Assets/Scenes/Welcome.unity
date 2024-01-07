@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 1083385040}
   - component: {fileID: 1083385039}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RoomLoadAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739a20420414420a8472cf9ca3653368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneType: 2
+  sceneType: 0
 --- !u!4 &1083385040
 Transform:
   m_ObjectHideFlags: 0
