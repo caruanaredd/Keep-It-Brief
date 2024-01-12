@@ -38,6 +38,16 @@ public class Interaction : MonoBehaviour
         {
             interaction.transform.localPosition = Vector2.zero;
         }
+        
+        if (isPressed == true)
+        {
+            interaction.SetActive(true); 
+        }
+
+        else
+        {
+            interaction.SetActive(false);
+        }
     }
 
     IEnumerator DisableInteraction()

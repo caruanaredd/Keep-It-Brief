@@ -9,5 +9,8 @@ public class CharPickerManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("StaffX", 0);
         PlayerPrefs.SetFloat("StaffY", 0);
+        
+        PlayerPrefs.SetFloat("SpawnX", 0);
+        PlayerPrefs.SetFloat("SpawnY", -41f);
     }
 }

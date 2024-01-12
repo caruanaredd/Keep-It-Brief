@@ -7,7 +7,7 @@ public class BoxMovement : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Fist"))
         {
             transform.SetParent(other.transform.parent);
             Interaction interaction = other.GetComponentInParent<Interaction>();
