@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1a86f042a8c854a51a9b37cfca48bd1b
+guid: 3167bce2e3459419ba5cf4bfece2fd93
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 69
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laptop_on_0
+      name: chatbubble_0
       rect:
         serializedVersion: 2
-        x: 110
-        y: 76
-        width: 141
-        height: 169
+        x: 822
+        y: 469
+        width: 295
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41214bf742c6b4111a99da41322b8c79
-      internalID: 168485550
+      spriteID: a7abe5425cf9c49e88bd6e298c81b6c3
+      internalID: 1803155439
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      laptop_on_0: 168485550
+      chatbubble_0: 1803155439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

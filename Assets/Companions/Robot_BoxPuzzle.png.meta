@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1a86f042a8c854a51a9b37cfca48bd1b
+guid: 212f6d7bd1b2947e08ce3b4061b0ec0d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laptop_on_0
+      name: Robot_BoxPuzzle_0
       rect:
         serializedVersion: 2
-        x: 110
-        y: 76
-        width: 141
-        height: 169
+        x: 361
+        y: 71
+        width: 1265
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41214bf742c6b4111a99da41322b8c79
-      internalID: 168485550
+      spriteID: 0ad1b14814a1f477ba07e96849ba51d4
+      internalID: -1662185574
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      laptop_on_0: 168485550
+      Robot_BoxPuzzle_0: -1662185574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

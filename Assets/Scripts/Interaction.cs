@@ -9,15 +9,16 @@ public class Interaction : MonoBehaviour
     public GameObject interaction;
 
     private Movement movement;
-
     private Transform heldObject;
+    private Companion companion; // Reference to the Companion script
 
     void Awake()
     {
         movement = GetComponent<Movement>();
+        companion = GetComponentInChildren<Companion>(); // Adjust this based on your hierarchy
     }
 
-    // Start is called before the first frame update
+    // Triggered directly by the control system when the "Interact" button is pressed
     void OnInteract(InputValue value)
     {
         bool isPressed = value.Get<float>() != 0;
@@ -38,16 +39,24 @@ public class Interaction : MonoBehaviour
         {
             interaction.transform.localPosition = Vector2.zero;
         }
-        
-        if (isPressed == true)
-        {
-            interaction.SetActive(true); 
-        }
 
+        if (isPressed)
+        {
+            interaction.SetActive(true);
+        }
         else
         {
             interaction.SetActive(false);
         }
+    }
+
+    // Triggered directly by the control system when the "InteractionComp" button is pressed
+    void OnInteractionComp(InputValue value)
+    {
+        bool isPressed = value.Get<float>() != 0;
+
+        // Call the ToggleCanvasAndFreezeGame method from the Companion script
+        companion.ToggleCanvasAndFreezeGame(isPressed);
     }
 
     IEnumerator DisableInteraction()
@@ -57,6 +66,7 @@ public class Interaction : MonoBehaviour
         interaction.transform.localPosition = Vector2.zero;
     }
 
+    // The Hold method to be called by other scripts
     public void Hold(Transform obj)
     {
         if (heldObject != null)

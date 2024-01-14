@@ -9,6 +9,8 @@ TagManager:
   - Interactable
   - SpawnPoint
   - Fist
+  - Robo
+  - Companion
   layers:
   - Default
   - TransparentFX
