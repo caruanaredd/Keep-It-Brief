@@ -1,7 +1,7 @@
 public enum SceneType
 {
     Welcome,
-    Scene1,
+    BoxPushing,
     Scene4,
     Hall
 }

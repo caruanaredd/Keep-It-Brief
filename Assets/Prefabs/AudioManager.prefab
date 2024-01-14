@@ -52,7 +52,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2af0e19b01ea541c99ddab06e9408310, type: 3}
   - {fileID: 8300000, guid: 524a3e340fa3e44c28862207e7f14b05, type: 3}
   - {fileID: 8300000, guid: e7ceb60b1f59b4f80948bf857fef42f1, type: 3}
-  soundEffects: []
+  - {fileID: 8300000, guid: 0c9ce1177190f4c89ad9337b35f87a7a, type: 3}
+  soundEffects:
+  - {fileID: 8300000, guid: 88541e85a47924fb2a2cfe8658a3c79f, type: 3}
   backgroundMusicSource: {fileID: 5556471755255441739}
   soundEffectSource: {fileID: 2027699518373459191}
   CreepyBGM: {fileID: 3237831715603421807}

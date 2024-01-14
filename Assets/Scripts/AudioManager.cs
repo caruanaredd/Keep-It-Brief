@@ -85,8 +85,8 @@ public class AudioManager : MonoBehaviour
             case "Welcome":
                 LoadBGM(SceneType.Welcome);
                 break;
-            case "Scene1":
-                LoadBGM(SceneType.Scene1);
+            case "BoxPushing":
+                LoadBGM(SceneType.BoxPushing);
                 break;
             case "Scene4":
                 LoadBGM(SceneType.Scene4);
@@ -106,8 +106,8 @@ public class AudioManager : MonoBehaviour
             case SceneType.Welcome:
                 PlayBackgroundMusic(sceneClips[1]);
                 break;
-            case SceneType.Scene1:
-                PlayBackgroundMusic(sceneClips[1]);
+            case SceneType.BoxPushing:
+                PlayBackgroundMusic(sceneClips[3]);
                 break;
             case SceneType.Scene4:
                 PlayBackgroundMusic(sceneClips[0]);
