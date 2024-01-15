@@ -9,6 +9,8 @@ TagManager:
   - Interactable
   - SpawnPoint
   - Fist
+  - ActionTile
+  - KillTile
   layers:
   - Default
   - TransparentFX
