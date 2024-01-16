@@ -11,6 +11,8 @@ TagManager:
   - Fist
   - Robo
   - Companion
+  - Computer
+  - Laptop
   layers:
   - Default
   - TransparentFX

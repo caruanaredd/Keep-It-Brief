@@ -8,20 +8,41 @@ using UnityEngine;
 
 public class BoxTarget : MonoBehaviour
 {
-    public Collider2D target;
+    public GameObject target;
     public Sprite newSprite; // Assign the new sprite in the Unity Editor
-
+    public int boxType;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other == target)
+        switch (boxType)
         {
-            other.transform.SetParent(transform);
-            other.transform.localPosition = Vector3.zero;
-            AudioManager.instance.PlaySoundEffect(0);
-            Destroy(target.gameObject);
-            // Change the sprite of the object when triggered
-            ChangeObjectSprite(newSprite);
+            case 1:
+                if (other.CompareTag("Computer"))
+                {
+                    other.transform.SetParent(transform);
+                    other.transform.localPosition = Vector3.zero;
+                    AudioManager.instance.PlaySoundEffect(0);
+                    Destroy(target.gameObject);
+                    // Change the sprite of the object when triggered
+                    ChangeObjectSprite(newSprite);
+                }
+
+                break;
+                
+                case 2:
+                if (other.CompareTag("Laptop"))
+                {
+                    other.transform.SetParent(transform);
+                    other.transform.localPosition = Vector3.zero;
+                    AudioManager.instance.PlaySoundEffect(0);
+                    Destroy(target.gameObject);
+                    // Change the sprite of the object when triggered
+                    ChangeObjectSprite(newSprite);
+                }
+
+                break;
         }
+        
+        
     }
 
     // Function to change the sprite of the object

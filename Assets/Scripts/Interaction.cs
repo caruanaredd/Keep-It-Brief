@@ -56,7 +56,7 @@ public class Interaction : MonoBehaviour
         bool isPressed = value.Get<float>() != 0;
 
         // Call the ToggleCanvasAndFreezeGame method from the Companion script
-        companion.ToggleCanvasAndFreezeGame(isPressed);
+        //companion.ToggleCanvasAndFreezeGame(isPressed);
     }
 
     IEnumerator DisableInteraction()
