@@ -39,7 +39,6 @@ public class Movement : MonoBehaviour
         if (hasControl)
         {
             player.velocity = movement * speed;
-        }
 
         if (movement == Vector2.zero)
         {
@@ -70,6 +69,8 @@ public class Movement : MonoBehaviour
         myAnimation.SetFloat("Xaxis", movement.x);
         myAnimation.SetFloat("Yaxis", movement.y);
 
+        }
+
         //Animator.SetInt("Direction", (int)direction);
 
     }
@@ -88,24 +89,41 @@ public class Movement : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(gameObject);
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        StartCoroutine(Dead());
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Tile"))
+        if (other.CompareTag("ActionTile"))
         {
-            if (Vector2.Distance(transform.position, other.transform.position) > 0.5f)
+            if (Vector2.Distance(transform.position, other.transform.position) > 1f)
                 return;
+
+            TileBase tile = other.GetComponent<TileBase>();
+            tile.Trigger(this);
+        }
+        if (other.CompareTag("KillTile"))
+        {
+            //if (Vector2.Distance(transform.position, other.transform.position) > 0.5f)
+                //return;
 
             TileBase tile = other.GetComponent<TileBase>();
             tile.Trigger(this);
         }
     }
 
-
+    IEnumerator Dead()
+    {   
+        player.velocity = Vector2.zero;
+        hasControl = false;
+        myAnimation.SetBool("isDead", true);
+        yield return new WaitForSeconds(1.35f);
+        Destroy(gameObject);
+        myAnimation.SetBool("isDead", false);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+        hasControl = true;
+    }
 
 
 

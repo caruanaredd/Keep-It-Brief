@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: 2d2f1c47ca3e30f4a991220570040bfc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__1
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 361
+        width: 277
+        height: 324
+      alignment: 9
+      pivot: {x: 0.51346123, y: 0.12218466}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5c6a3061b407148885dea12ca9c2e8
+      internalID: -627700870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__2
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 364
+        width: 243
+        height: 328
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13490492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e603186e612e4b24cb5f73b03379ff88
+      internalID: 590617407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__4
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 362
+        width: 273
+        height: 325
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13361938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183a4ee692be56642b61f6c9072a329d
+      internalID: -1295813282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__5
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 348
+        width: 155
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13055581}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547697bcdf81e4449aab2d6269c8ebce
+      internalID: 1776432695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__6
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 347
+        width: 245
+        height: 327
+      alignment: 9
+      pivot: {x: 0.5045421, y: 0.1255545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfab0293aaba3244bb50861d0d30802e
+      internalID: -1224837972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__9
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 372
+        width: 257
+        height: 230
+      alignment: 9
+      pivot: {x: 0.48700926, y: 0.16131008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8644788bd79bbad478a3b59c5bf4f27e
+      internalID: 1697444235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__19
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 75
+        width: 268
+        height: 184
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18550196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6635322a0513ae84bbd7e0205bbe4b5b
+      internalID: 1687360268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__21
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 78
+        width: 269
+        height: 199
+      alignment: 9
+      pivot: {x: 0.5041368, y: 0.17006303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759c960f5c263b24a9444bf8aa4029bc
+      internalID: 1163108598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__22
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 81
+        width: 257
+        height: 214
+      alignment: 9
+      pivot: {x: 0.49566984, y: 0.18278892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9090cece906c424f952c2c94a5341b1
+      internalID: -208114162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__23
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 84
+        width: 267
+        height: 223
+      alignment: 9
+      pivot: {x: 0.49999955, y: 0.16065907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cb7b695b3119d4ca5d7dafb1b7b058
+      internalID: 1689120589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__24
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 87
+        width: 267
+        height: 124
+      alignment: 9
+      pivot: {x: 0.49166402, y: 0.32051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3bb736be2d0c541959b8ea021c7ff4
+      internalID: 1367930937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bloo_Fucking_Dies__25
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 89
+        width: 269
+        height: 125
+      alignment: 9
+      pivot: {x: 0.49586278, y: 0.3130431}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9491a12937555ec45ad9cefce3bcdb2f
+      internalID: 1556222865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bloo_Fucking_Dies__0: 2113044578
+      Bloo_Fucking_Dies__1: -627700870
+      Bloo_Fucking_Dies__10: -582523990
+      Bloo_Fucking_Dies__11: -1723623023
+      Bloo_Fucking_Dies__12: 1077723484
+      Bloo_Fucking_Dies__13: 1739908620
+      Bloo_Fucking_Dies__14: 63617851
+      Bloo_Fucking_Dies__15: 113186770
+      Bloo_Fucking_Dies__16: 2096867004
+      Bloo_Fucking_Dies__17: 1440473613
+      Bloo_Fucking_Dies__18: -855400968
+      Bloo_Fucking_Dies__19: 1687360268
+      Bloo_Fucking_Dies__2: 590617407
+      Bloo_Fucking_Dies__20: 1165426961
+      Bloo_Fucking_Dies__21: 1163108598
+      Bloo_Fucking_Dies__22: -208114162
+      Bloo_Fucking_Dies__23: 1689120589
+      Bloo_Fucking_Dies__24: 1367930937
+      Bloo_Fucking_Dies__25: 1556222865
+      Bloo_Fucking_Dies__3: 1075324244
+      Bloo_Fucking_Dies__4: -1295813282
+      Bloo_Fucking_Dies__5: 1776432695
+      Bloo_Fucking_Dies__6: -1224837972
+      Bloo_Fucking_Dies__7: -586008574
+      Bloo_Fucking_Dies__8: 348054953
+      Bloo_Fucking_Dies__9: 1697444235
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
