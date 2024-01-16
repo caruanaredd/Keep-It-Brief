@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 70542218}
   m_Layer: 0
   m_Name: StopTile_0 (4)
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1753,7 +1753,7 @@ GameObject:
   - component: {fileID: 362524435}
   m_Layer: 0
   m_Name: StopTile_0 (6)
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4558,7 +4558,7 @@ GameObject:
   - component: {fileID: 1189686230}
   m_Layer: 0
   m_Name: StopTile_0 (1)
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4859,7 +4859,7 @@ GameObject:
   - component: {fileID: 1363297042}
   m_Layer: 0
   m_Name: StopTile_0
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5290,7 +5290,7 @@ GameObject:
   - component: {fileID: 1492002306}
   m_Layer: 0
   m_Name: StopTile_0 (3)
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5721,7 +5721,7 @@ GameObject:
   - component: {fileID: 1672022351}
   m_Layer: 0
   m_Name: StopTile_0 (5)
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5864,7 +5864,7 @@ GameObject:
   - component: {fileID: 1830925406}
   m_Layer: 0
   m_Name: StopTile_0 (2)
-  m_TagString: ActionTile
+  m_TagString: KillTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
