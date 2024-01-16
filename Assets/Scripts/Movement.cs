@@ -40,6 +40,8 @@ public class Movement : MonoBehaviour
         {
             player.velocity = movement * speed;
 
+        if(PauseMenu.isPaused == false)
+        {
         if (movement == Vector2.zero)
         {
             myAnimation.SetFloat("Xaxis", 0);
@@ -68,7 +70,7 @@ public class Movement : MonoBehaviour
         }
         myAnimation.SetFloat("Xaxis", movement.x);
         myAnimation.SetFloat("Yaxis", movement.y);
-
+        }
         }
 
         //Animator.SetInt("Direction", (int)direction);
