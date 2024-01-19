@@ -14,5 +14,6 @@ public class PlayerPusher : TileBase
     public override void Trigger(Movement movement)
     {
         movement.Push(direction);
+        AudioManager.instance.PlaySoundEffect(3);
     }
 }

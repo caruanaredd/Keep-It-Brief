@@ -12,5 +12,6 @@ public class KillTile : TileBase
     public override void Trigger(Movement movement)
     {
         movement.Kill();
+        AudioManager.instance.PlaySoundEffect(2);
     }
 }

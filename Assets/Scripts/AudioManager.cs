@@ -88,11 +88,14 @@ public class AudioManager : MonoBehaviour
             case "BoxPushing":
                 LoadBGM(SceneType.BoxPushing);
                 break;
-            case "Scene4":
-                LoadBGM(SceneType.Scene4);
+            case "TileTesting":
+                LoadBGM(SceneType.TileTesting);
                 break;
             case "Hall":
                 LoadBGM(SceneType.Hall);
+                break;
+            case "Main":
+                LoadBGM(SceneType.Main);
                 break;
             // Add more cases for additional scenes as needed
         }
@@ -106,11 +109,14 @@ public class AudioManager : MonoBehaviour
             case SceneType.Welcome:
                 PlayBackgroundMusic(sceneClips[1]);
                 break;
+            case SceneType.Main:
+                PlayBackgroundMusic(sceneClips[0]);
+                break;
             case SceneType.BoxPushing:
                 PlayBackgroundMusic(sceneClips[3]);
                 break;
-            case SceneType.Scene4:
-                PlayBackgroundMusic(sceneClips[0]);
+            case SceneType.TileTesting:
+                PlayBackgroundMusic(sceneClips[4]);
                 break;
             case SceneType.Hall:
                 PlayBackgroundMusic(sceneClips[0]);
@@ -125,6 +131,7 @@ public class AudioManager : MonoBehaviour
         if (CreepyBGM != null)
         {
             CreepyBGM.clip = clip;
+            CreepyBGM.time = backgroundMusicSource.time;
             CreepyBGM.loop = true;
             CreepyBGM.Play();
         }
@@ -151,6 +158,9 @@ public class AudioManager : MonoBehaviour
     {
         if (backgroundMusicSource != null)
         {
+            if (backgroundMusicSource.clip == clip)
+                return;
+            
             backgroundMusicSource.clip = clip;
             backgroundMusicSource.loop = true;
             backgroundMusicSource.Play();
