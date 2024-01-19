@@ -12,10 +12,13 @@ public class Interaction : MonoBehaviour
     private Transform heldObject;
     private Companion companion; // Reference to the Companion script
 
+    private Animator myAnimation;
+    
     void Awake()
     {
         movement = GetComponent<Movement>();
         companion = GetComponentInChildren<Companion>(); // Adjust this based on your hierarchy
+        myAnimation = GetComponent<Animator>();
     }
 
     // Triggered directly by the control system when the "Interact" button is pressed
@@ -31,8 +34,7 @@ public class Interaction : MonoBehaviour
             }
             else
             {
-                heldObject.SetParent(null);
-                heldObject = null;
+                Release();
             }
         }
         else
@@ -73,5 +75,13 @@ public class Interaction : MonoBehaviour
             return;
 
         heldObject = obj;
+        myAnimation.SetBool("isPushing", true);
+    }
+
+    public void Release()
+    {
+        heldObject.SetParent(null);
+        heldObject = null;
+        myAnimation.SetBool("isPushing", false);
     }
 }
