@@ -34,6 +34,8 @@ public class BoxTarget : MonoBehaviour
         bm?.Release();
         
         Destroy(other.gameObject);
+
+        BoxSceneManager.correctSlots++;
     }
 
     // Function to change the sprite of the object

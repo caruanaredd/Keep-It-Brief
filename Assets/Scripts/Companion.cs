@@ -55,11 +55,10 @@ public class Companion : MonoBehaviour
         if (other.CompareTag("Fist"))
         {
             StartCoroutine(Popup());
-            Debug.Log("Whatever");
         }
     }
 
-    IEnumerator Popup()
+    public IEnumerator Popup()
    {
        canvas.SetActive(true);
        yield return new WaitForSeconds(5f);

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TileTesting.unity
     guid: 1c2e91f203278594c9f52371dd014962
+  - enabled: 1
+    path: Assets/Scenes/Dominics.unity
+    guid: 4a53fcf2977ea764a9b4cfb5655e2f8d
   m_configObjects: {}

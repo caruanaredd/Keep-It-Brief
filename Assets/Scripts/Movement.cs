@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -18,12 +19,23 @@ public class Movement : MonoBehaviour
 
     public bool hasControl { get; private set; } = true;
 
+    Scene currentScene;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
         player = GetComponent<Rigidbody2D>(); 
         playerR = GetComponent<SpriteRenderer>();
         myAnimation = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(currentScene.name);
+        }
     }
 
     void OnMove(InputValue value)
@@ -53,13 +65,13 @@ public class Movement : MonoBehaviour
             {
                 direction = Direction.Right;
 
-                if (transform.childCount == 1)
+                if (transform.childCount <=2)
                     playerR.flipX = false;
             }
             else if (movement.x < 0)
             {
                 direction = Direction.Left;
-                if (transform.childCount == 1)
+                if (transform.childCount <= 2)
                     playerR.flipX = true;
             }
 
