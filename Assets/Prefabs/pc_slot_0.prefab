@@ -143,6 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0f259841e734808b88c8315e6d0b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   newSprite: {fileID: 1656771101, guid: 6d288b1f9cdee46f18fa2a9f7262e429, type: 3}
   boxType: 1

@@ -37,40 +37,44 @@ public class Movement : MonoBehaviour
         // movement.Normalize();
 
         if (hasControl)
-        {
-            player.velocity = movement * speed;
+            {
+                player.velocity = movement * speed;
 
-        if(PauseMenu.isPaused == false)
-        {
-        if (movement == Vector2.zero)
-        {
-            myAnimation.SetFloat("Xaxis", 0);
-            myAnimation.SetFloat("Yaxis", 0);
-            return;
-        }
+            if(PauseMenu.isPaused == false)
+            {
+            if (movement == Vector2.zero)
+            {
+                myAnimation.SetFloat("Xaxis", 0);
+                myAnimation.SetFloat("Yaxis", 0);
+                return;
+            }
 
-        if (movement.x > 0)
-        {
-            direction = Direction.Right;
-            playerR.flipX = false;
-        }
-        else if (movement.x < 0)
-        {
-            direction = Direction.Left;
-            playerR.flipX = true;
-        }
+            if (movement.x > 0)
+            {
+                direction = Direction.Right;
 
-        if (movement.y > 0)
-        {
-            direction = Direction.Up;
-        }
-        else if (movement.y < 0)
-        {
-            direction = Direction.Down;
-        }
-        myAnimation.SetFloat("Xaxis", movement.x);
-        myAnimation.SetFloat("Yaxis", movement.y);
-        }
+                if (transform.childCount == 1)
+                    playerR.flipX = false;
+            }
+            else if (movement.x < 0)
+            {
+                direction = Direction.Left;
+                if (transform.childCount == 1)
+                    playerR.flipX = true;
+            }
+
+            if (movement.y > 0)
+            {
+                direction = Direction.Up;
+            }
+            else if (movement.y < 0)
+            {
+                direction = Direction.Down;
+            }
+            myAnimation.SetFloat("Xaxis", movement.x);
+            myAnimation.SetFloat("Yaxis", movement.y);
+            }
+        
         }
 
         //Animator.SetInt("Direction", (int)direction);
@@ -128,6 +132,6 @@ public class Movement : MonoBehaviour
     }
 
 
-
+    
 
 }
