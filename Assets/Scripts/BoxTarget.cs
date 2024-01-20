@@ -8,8 +8,16 @@ using UnityEngine;
 
 public class BoxTarget : MonoBehaviour
 {
+    BoxCollider2D solidSlotCollider;
+    CircleCollider2D triggerSlotCollider;
     public Sprite newSprite; // Assign the new sprite in the Unity Editor
     public int boxType;
+
+    void Start()
+    {
+        solidSlotCollider = GetComponent<BoxCollider2D>();
+        triggerSlotCollider = GetComponent<CircleCollider2D>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (boxType)
@@ -34,6 +42,9 @@ public class BoxTarget : MonoBehaviour
         bm?.Release();
         
         Destroy(other.gameObject);
+
+        solidSlotCollider.enabled = true;
+        triggerSlotCollider.enabled = false;
 
         BoxSceneManager.correctSlots++;
     }

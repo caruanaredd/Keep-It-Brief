@@ -20,8 +20,8 @@ public class Collectible : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Destroy(gameObject);
             HallSceneManager.completeLevels++;
+            Destroy(gameObject);
         }
     }
 }

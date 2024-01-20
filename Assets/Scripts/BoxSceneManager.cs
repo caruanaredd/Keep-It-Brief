@@ -15,7 +15,7 @@ public class BoxSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (correctSlots == 12)
+        if ( brief != null && correctSlots == 12)
         {
             brief.SetActive(true);
         }

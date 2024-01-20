@@ -12,5 +12,7 @@ public class CharPickerManager : MonoBehaviour
         
         PlayerPrefs.SetFloat("SpawnX", 0);
         PlayerPrefs.SetFloat("SpawnY", -41f);
+
+        HallSceneManager.completeLevels = 0;
     }
 }

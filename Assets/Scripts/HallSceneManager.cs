@@ -21,7 +21,7 @@ public class HallSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (completeLevels == 2)
+        if (completeLevels >= 2)
         {
             DomDoor.SetActive(true);
         }
