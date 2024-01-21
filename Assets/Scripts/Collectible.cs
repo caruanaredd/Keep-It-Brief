@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    GameObject pauseCanvas;
+    PauseMenu pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pauseCanvas = GameObject.Find("PhoneCanvas");
+        pauseMenu = pauseCanvas.GetComponent<PauseMenu>();
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class Collectible : MonoBehaviour
         {
             HallSceneManager.completeLevels++;
             Destroy(gameObject);
+            pauseMenu.UpdateScore();
         }
     }
 }

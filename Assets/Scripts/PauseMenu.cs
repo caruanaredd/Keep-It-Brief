@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
 
     public static bool isPaused;
+
+    int briefsCollected;
+    public TextMeshProUGUI briefDisplay;
     // Start is called before the first frame update
 
     void Awake()
@@ -42,5 +46,11 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void UpdateScore()
+    {
+        briefsCollected = HallSceneManager.completeLevels;
+        briefDisplay.text = briefsCollected + "/2";
     }
 }
