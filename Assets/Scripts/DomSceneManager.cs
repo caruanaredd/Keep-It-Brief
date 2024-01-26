@@ -25,6 +25,6 @@ public class DomSceneManager : MonoBehaviour
     IEnumerator LoadSceneDelay()
     {
         yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
