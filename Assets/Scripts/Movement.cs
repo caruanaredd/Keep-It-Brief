@@ -1,13 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.Burst.Intrinsics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(GridMovement))]
 public class Movement : MonoBehaviour
 {
     public float speed;
@@ -21,6 +17,8 @@ public class Movement : MonoBehaviour
 
     Scene currentScene;
 
+    GridMovement gridMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +26,7 @@ public class Movement : MonoBehaviour
         player = GetComponent<Rigidbody2D>(); 
         playerR = GetComponent<SpriteRenderer>();
         myAnimation = GetComponent<Animator>();
+        gridMove = GetComponent<GridMovement>();
     }
 
     void Update()
@@ -49,44 +48,45 @@ public class Movement : MonoBehaviour
         // movement.Normalize();
 
         if (hasControl)
-            {
-                player.velocity = movement * speed;
+        {
+                //player.velocity = movement * speed;
 
             if(PauseMenu.isPaused == false)
             {
-            if (movement == Vector2.zero)
-            {
-                myAnimation.SetFloat("Xaxis", 0);
-                myAnimation.SetFloat("Yaxis", 0);
-                return;
+                if (movement == Vector2.zero)
+                {
+                    direction = Direction.None;
+                    myAnimation.SetFloat("Xaxis", 0);
+                    myAnimation.SetFloat("Yaxis", 0);
+                }
+
+                if (movement.x > 0)
+                {
+                    direction = Direction.Right;
+
+                    if (transform.childCount <=2)
+                        playerR.flipX = false;
+                }
+                else if (movement.x < 0)
+                {
+                    direction = Direction.Left;
+                    if (transform.childCount <= 2)
+                        playerR.flipX = true;
+                }
+
+                if (movement.y > 0)
+                {
+                    direction = Direction.Up;
+                }
+                else if (movement.y < 0)
+                {
+                    direction = Direction.Down;
+                }
+                myAnimation.SetFloat("Xaxis", movement.x);
+                myAnimation.SetFloat("Yaxis", movement.y);
             }
 
-            if (movement.x > 0)
-            {
-                direction = Direction.Right;
-
-                if (transform.childCount <=2)
-                    playerR.flipX = false;
-            }
-            else if (movement.x < 0)
-            {
-                direction = Direction.Left;
-                if (transform.childCount <= 2)
-                    playerR.flipX = true;
-            }
-
-            if (movement.y > 0)
-            {
-                direction = Direction.Up;
-            }
-            else if (movement.y < 0)
-            {
-                direction = Direction.Down;
-            }
-            myAnimation.SetFloat("Xaxis", movement.x);
-            myAnimation.SetFloat("Yaxis", movement.y);
-            }
-        
+            gridMove.Move(direction.ToVector3Int());
         }
 
         //Animator.SetInt("Direction", (int)direction);
