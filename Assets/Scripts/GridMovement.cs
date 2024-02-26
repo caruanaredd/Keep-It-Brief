@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class GridMovement : MonoBehaviour
 {
@@ -31,8 +32,16 @@ public class GridMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target) < 0.1f)
         {
-            cellPosition += direction;
-            target = grid.CellToWorld(cellPosition);
+            var neighbor = cellPosition + direction;
+            var nPoint = grid.CellToWorld(neighbor);
+            var collider = Physics2D.OverlapBox(nPoint, grid.cellSize * .5f, 0);
+
+            if (!collider)
+            {
+                cellPosition = neighbor;
+                target = grid.CellToWorld(cellPosition);
+            }
+
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target, 10f * Time.deltaTime);
@@ -41,5 +50,25 @@ public class GridMovement : MonoBehaviour
     public void Move(Vector3Int dir)
     {
         direction = dir;
+    }
+
+    private void OnGUI()
+    {
+        var neighbor = cellPosition + direction;
+        var nPoint = grid.CellToWorld(neighbor);
+        var collider = Physics2D.OverlapBox(nPoint, grid.cellSize * .5f, 0);
+
+        GUI.color = Color.black;
+        GUI.skin.label.fontSize = 30;
+        GUI.Label(new Rect(10, 10, 500, 100), $"Neighbor in the way: {collider?.name}");
+    }
+
+    private void OnDrawGizmos()
+    {
+        var neighbor = cellPosition + direction;
+        var nPoint = grid.CellToWorld(neighbor);
+
+        Gizmos.color = new Color(0, 0, 1, .2f);
+        Gizmos.DrawCube(nPoint, Vector3.one);
     }
 }
