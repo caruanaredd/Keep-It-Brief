@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(GridMovement))]
-public class Movement : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class Movement : GridObject
 {
     public float speed;
     private Rigidbody2D player;
@@ -17,16 +17,22 @@ public class Movement : MonoBehaviour
 
     Scene currentScene;
 
-    GridMovement gridMove;
+    Vector2 movement = Vector2.zero;
+
+    private bool _isInteracting;
+
+    private GridObject _holdingObject;
+
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         currentScene = SceneManager.GetActiveScene();
         player = GetComponent<Rigidbody2D>(); 
         playerR = GetComponent<SpriteRenderer>();
         myAnimation = GetComponent<Animator>();
-        gridMove = GetComponent<GridMovement>();
     }
 
     void Update()
@@ -35,18 +41,98 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene(currentScene.name);
         }
+
+        MoveObject();
     }
 
     void OnMove(InputValue value)
     {
-
-        Vector2 movement = value.Get<Vector2>();
+        movement = value.Get<Vector2>();
         // float horizontal = Input.GetAxis("Horizontal");
         // float vertical = Input.GetAxis("Vertical");
 
         // Vector2 movement = new Vector2(horizontal, vertical);
         // movement.Normalize();
+    }
 
+    void MoveObject()
+    {
+        if (IsMoving || hasControl == false)
+            return;
+        
+        // If we're holding an object, we should lock the direction of motion.
+        if (_isInteracting && _holdingObject != null)
+        {
+            // No X if we're facing up or down.
+            if (movement.x != 0 && direction is Direction.Up or Direction.Down)
+            {
+                movement.x = 0;
+            }
+            
+            // No Y if we're facing left or right
+            if (movement.y != 0 && direction is Direction.Left or Direction.Right)
+            {
+                movement.y = 0;
+            }
+        }
+
+         // Store the direction in a temporary variable
+        var tmpDirection = direction;
+        if (movement.x > 0)
+        {
+            tmpDirection = Direction.Right;
+        }
+        else if (movement.x < 0)
+        {
+            tmpDirection = Direction.Left;
+        }
+        else if (movement.y > 0)
+        {
+            tmpDirection = Direction.Up;
+        }
+        else if (movement.y < 0)
+        {
+            tmpDirection = Direction.Down;
+        }
+
+        if (movement != Vector2.zero)
+        {
+            // If we're not interacting with anything, move 
+            if (!_isInteracting)
+            {
+                direction = tmpDirection;
+                Move(direction.ToVector3Int());
+            }
+            else
+            {
+                // Push if we're facing the same direction
+                if (direction == tmpDirection)
+                {
+                    Push(direction.ToVector3Int());
+                }
+                // Or pull if we're going the opposite side
+                else
+                {
+                    // To pull an object, we just push the object we're holding in reverse
+                    if (_holdingObject != null)
+                    {
+                        _holdingObject.Push(tmpDirection.ToVector3Int());
+                    }
+                    // We're not holding anything
+                    else
+                    {
+                        direction = tmpDirection;
+                        Push(direction.ToVector3Int());
+                    }
+                }
+            }
+
+            myAnimation.SetFloat("Xaxis", movement.x);
+            myAnimation.SetFloat("Yaxis", movement.y);
+            playerR.flipX = direction == Direction.Left;
+        }
+
+        /*
         if (hasControl)
         {
                 //player.velocity = movement * speed;
@@ -84,11 +170,12 @@ public class Movement : MonoBehaviour
                 }
                 myAnimation.SetFloat("Xaxis", movement.x);
                 myAnimation.SetFloat("Yaxis", movement.y);
+            
             }
 
             gridMove.Move(direction.ToVector3Int());
         }
-
+        */
         //Animator.SetInt("Direction", (int)direction);
 
     }
@@ -141,6 +228,32 @@ public class Movement : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
         hasControl = true;
+    }
+
+    private void OnInteract(InputValue value)
+    {
+        _isInteracting = value.Get<float>() != 0f;
+
+        if (_isInteracting)
+        {
+            // Get all the colliders available
+            var colliders = GetNeighborColliders(direction.ToVector3Int());
+            
+            // Exit if no colliders
+            if (colliders.Length == 0)
+                return;
+
+            // Exit if not a GridObject
+            if (colliders[0].TryGetComponent<GridObject>(out var gridObject) == false)
+                return;
+
+            // Hold me
+            _holdingObject = gridObject;
+        }
+        else
+        {
+            _holdingObject = null;
+        }
     }
 
 
