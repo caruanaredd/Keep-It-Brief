@@ -31,8 +31,8 @@ public class Movement : GridObject
 
         currentScene = SceneManager.GetActiveScene();
         player = GetComponent<Rigidbody2D>(); 
-        playerR = GetComponent<SpriteRenderer>();
-        myAnimation = GetComponent<Animator>();
+        playerR = GetComponentInChildren<SpriteRenderer>();
+        myAnimation = GetComponentInChildren<Animator>();
     }
 
     void Update()

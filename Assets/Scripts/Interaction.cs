@@ -6,14 +6,14 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Movement))]
 public class Interaction : MonoBehaviour
 {
-    public GameObject interaction;
+     public GameObject interaction;
+    
 
     private Movement movement;
     private Transform heldObject;
     private Companion companion; // Reference to the Companion script
-
     private Animator myAnimation;
-    
+
     void Awake()
     {
         movement = GetComponent<Movement>();
@@ -25,6 +25,8 @@ public class Interaction : MonoBehaviour
     void OnInteract(InputValue value)
     {
         bool isPressed = value.Get<float>() != 0;
+
+        Debug.Log("Interact button pressed: " + isPressed);
 
         if (isPressed)
         {
@@ -45,20 +47,18 @@ public class Interaction : MonoBehaviour
         if (isPressed)
         {
             interaction.SetActive(true);
+            Debug.Log("Interaction object active: " + interaction.activeSelf);
+            // Check if the interaction object is a door, then teleport if it is
+            //if (interaction.CompareTag("Door"))
+            //{
+               // Debug.Log("Interacting with door");
+               // Teleport();
+           // }
         }
         else
         {
             interaction.SetActive(false);
         }
-    }
-
-    // Triggered directly by the control system when the "InteractionComp" button is pressed
-    void OnInteractionComp(InputValue value)
-    {
-        bool isPressed = value.Get<float>() != 0;
-
-        // Call the ToggleCanvasAndFreezeGame method from the Companion script
-        //companion.ToggleCanvasAndFreezeGame(isPressed);
     }
 
     IEnumerator DisableInteraction()
@@ -67,6 +67,8 @@ public class Interaction : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         interaction.transform.localPosition = Vector2.zero;
     }
+
+    
 
     // The Hold method to be called by other scripts
     public void Hold(Transform obj)

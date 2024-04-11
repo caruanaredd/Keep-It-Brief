@@ -8,8 +8,8 @@ public class GridMovement : MonoBehaviour
 {
     private static Grid grid;
     Vector2 input = new();
-    Vector3Int cellPosition;
-    Vector3 target;
+    public Vector3Int cellPosition;
+    public  Vector3 target;
     Vector3Int direction;
 
     void Awake()
@@ -32,6 +32,7 @@ public class GridMovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target) < 0.1f)
         {
+            
             var neighbor = cellPosition + direction;
             var nPoint = grid.CellToWorld(neighbor);
             var collider = Physics2D.OverlapBox(nPoint, grid.cellSize * .5f, 0);

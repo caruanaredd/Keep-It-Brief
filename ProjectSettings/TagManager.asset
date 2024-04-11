@@ -15,11 +15,12 @@ TagManager:
   - Laptop
   - KillTile
   - ActionTile
+  - Door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NotCulled
   - Water
   - UI
   - Background

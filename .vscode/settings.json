@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Keep It Brief.sln"
+    "dotnet.defaultSolution": "Keep-It-Brief.sln"
 }

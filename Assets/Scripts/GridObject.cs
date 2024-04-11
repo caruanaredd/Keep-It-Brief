@@ -4,7 +4,8 @@ using UnityEngine;
 public class GridObject : MonoBehaviour
 {
     // The minimum distance we should be in to accept more inputs.
-    private const float MinDistanceFromTarget = 0.03f;
+    private const float MinDistanceFromTarget = 0.1f;
+    private const float MovementSpeed = 4.25f;
     
     // The Grid Parent available to all objects
     protected static Grid GridParent { get; private set; }
@@ -63,7 +64,7 @@ public class GridObject : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, 8.25f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, MovementSpeed * Time.deltaTime);
     }
     
     /// <summary>
@@ -73,7 +74,7 @@ public class GridObject : MonoBehaviour
     protected Collider2D[] GetNeighborColliders(Vector3Int direction)
     {
         // This will offset the size of our collision check by a few units
-        const float reduction = 0.5f;
+        const float reduction = 0.1f;
 
         // Start from the same cell
         var neighbor = Cell;
@@ -95,13 +96,13 @@ public class GridObject : MonoBehaviour
             // The neighboring cell
             neighbor += direction;
 
-            // We need to calculate the center point of calculation, taking into account
+            // We need to find the center point of calculation, taking into account
             // the collider size and offset
             var point = GridParent.CellToWorld(neighbor);
             if (direction.x != 0) point.y = _collider.bounds.center.y;
             if (direction.y != 0) point.x = _collider.bounds.center.x;
             
-            others = Physics2D.OverlapBoxAll(point, size, 0);
+            others = Physics2D.OverlapBoxAll(point, size, 0).Where(col => !col.isTrigger).ToArray();
         } while (others.Any(col => col == _collider));
 
         return others;
@@ -192,5 +193,16 @@ public class GridObject : MonoBehaviour
     {
         _cell = GridParent.WorldToCell(transform.position);
         _targetPosition = transform.position = GridParent.CellToWorld(_cell);
+    }
+
+    public void Teleport(Vector3Int destination)
+    {
+        Cell = destination;
+        transform.position = _targetPosition;
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 300, 50), IsMoving.ToString());
     }
 }
