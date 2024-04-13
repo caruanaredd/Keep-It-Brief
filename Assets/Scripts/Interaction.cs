@@ -18,7 +18,7 @@ public class Interaction : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         companion = GetComponentInChildren<Companion>(); // Adjust this based on your hierarchy
-        myAnimation = GetComponent<Animator>();
+        myAnimation = GetComponentInChildren<Animator>();
     }
 
     // Triggered directly by the control system when the "Interact" button is pressed

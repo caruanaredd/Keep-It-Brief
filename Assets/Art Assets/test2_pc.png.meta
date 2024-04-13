@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6fc1f38f6638b4a88a9d81b444d6e4f5
+guid: d5b33202bb2dc4cca8f855da430cbda3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 123
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: desk_2_0
+      name: test2_pc_0
       rect:
         serializedVersion: 2
-        x: 530
-        y: 1039
-        width: 257
-        height: 158
+        x: 41
+        y: 0
+        width: 130
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa76d7ebfcbcf4ef4845b0c1e8d08b2d
-      internalID: 1819087143
+      spriteID: 5a4e4fd97e10d4c40981c2c625b19724
+      internalID: 2123979796
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      desk_2_0: 1819087143
+      test2_pc_0: 2123979796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

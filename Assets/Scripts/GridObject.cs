@@ -6,6 +6,7 @@ public class GridObject : MonoBehaviour
     // The minimum distance we should be in to accept more inputs.
     private const float MinDistanceFromTarget = 0.1f;
     private const float MovementSpeed = 4.25f;
+    private bool reachedCell = true;
     
     // The Grid Parent available to all objects
     protected static Grid GridParent { get; private set; }
@@ -61,10 +62,21 @@ public class GridObject : MonoBehaviour
         if (!IsMoving)
         {
             transform.position = _targetPosition;
+            if (reachedCell == false)
+            {
+                OnStopMoving();
+                reachedCell = true;
+            }
             return;
         }
 
+        reachedCell = false;
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, MovementSpeed * Time.deltaTime);
+    }
+
+    protected virtual void OnStopMoving()
+    {
+
     }
     
     /// <summary>

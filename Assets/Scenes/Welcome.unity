@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896fb8c901d9f4a428456104a4851ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionVideo: {fileID: 0}
+  nextSceneIndex: 3
 --- !u!114 &42475746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,6 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896fb8c901d9f4a428456104a4851ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionVideo: {fileID: 0}
+  nextSceneIndex: 0
 --- !u!114 &1299216591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,7 +1901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1558147386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2272,6 +2276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896fb8c901d9f4a428456104a4851ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionVideo: {fileID: 0}
+  nextSceneIndex: 3
 --- !u!114 &1805854971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,6 +2570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896fb8c901d9f4a428456104a4851ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionVideo: {fileID: 0}
+  nextSceneIndex: 0
 --- !u!114 &2077629118
 MonoBehaviour:
   m_ObjectHideFlags: 0
