@@ -36,12 +36,6 @@ void Update()
         player.Teleport(teleportDestination.Cell);
         isTeleporting = false;
 
-        // Resume game logic (if paused) CHECK ME
-        if (isGamePaused)
-        {
-            Time.timeScale = 1f;
-            isGamePaused = false;
-        }
     }
 }
 }

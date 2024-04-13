@@ -62,17 +62,22 @@ public class VideoManager : MonoBehaviour
 
     private IEnumerator PlayVideoRoutine()
     {
-        // Activate the video Canvas
-        videoCanvas.enabled = true;
+       // Activate the video Canvas
+    videoCanvas.enabled = true;
 
-        // Start playing the video
-        videoPlayer.Play();
+    // Start playing the video
+    videoPlayer.Play();
 
-        while (videoPlayer.isPlaying)
-        {
-            yield return null;
-        }
+    while (videoPlayer.isPlaying)
+    {
+        yield return null;
+    }
 
-        videoCanvas.enabled = false;
+    // Stop the video and reset its time position
+    videoPlayer.Stop();
+    videoPlayer.time = 0f;
+
+    // Deactivate the video Canvas
+    videoCanvas.enabled = false;
     }
 }
