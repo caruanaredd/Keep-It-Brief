@@ -16,7 +16,6 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
     }
     void Start()
     {

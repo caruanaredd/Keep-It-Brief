@@ -8,7 +8,7 @@ public class ToggleAudioListener : MonoBehaviour
     public Sprite spriteOn;
     public Sprite spriteOff;
 
-    private bool isOn = true;
+    private static bool isOn = true;
     private Image parentImage;
 
     private void Start()

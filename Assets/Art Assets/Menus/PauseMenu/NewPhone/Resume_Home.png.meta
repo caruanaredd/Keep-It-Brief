@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1f39593fa578284ba81717a57bf4733
+guid: 8779d130fc53eef48a337c27248b8f91
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,22 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Phone_Credits_0
+      name: Resume_Home_0
       rect:
         serializedVersion: 2
-        x: 425
-        y: 708
-        width: 129
-        height: 130
+        x: 193
+        y: 63
+        width: 394
+        height: 187
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 697240f1f47ca6f4cbd0a9e26e0e4c6c
-      internalID: 513337931
+      spriteID: 76368344514cf0c4db4426f51260b1b5
+      internalID: 47844046
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Phone_Credits_0: 513337931
+      Resume_Home_0: 47844046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

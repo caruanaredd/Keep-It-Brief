@@ -10,7 +10,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void LoadScene(int i)
     {
-        // StartCoroutine(PlayVideoAndLoadScene(i));
+        SceneManager.LoadScene(i);
     }
 
     public void PlaySelectionVideo(VideoPlayer videoPlayer)
