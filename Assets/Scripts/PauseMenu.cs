@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Image [] level;
+
+    public int currentLevel;
+    public Sprite completed;
     public GameObject pausePanel;
 
     public static bool isPaused;
@@ -16,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
+        
     }
     void Start()
     {
@@ -26,30 +32,46 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
         {
             Pause();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Resume();
         }
     }
 
     public void Pause()
     {
-        isPaused = true;
         pausePanel.SetActive(true);
         Time.timeScale = 0;
+        isPaused = true;
 
     }
 
     public void Resume()
     {
-        isPaused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+        isPaused = false;
     }
 
     public void UpdateScore()
     {
         briefsCollected = HallSceneManager.completeLevels;
         briefDisplay.text = briefsCollected + "/2";
+    }
+
+    public void UnlockLevel()
+    {
+        Debug.Log("Unlock" + currentLevel);
+        level[currentLevel].sprite = null;
+    }
+
+    public void CompleteLevel()
+    {
+        Debug.Log("Complete" + currentLevel);
+        level[currentLevel].sprite = completed;
     }
 }

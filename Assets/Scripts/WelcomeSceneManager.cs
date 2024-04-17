@@ -35,6 +35,7 @@ public class WelcomeSceneManager : MonoBehaviour
 
     private IEnumerator PunPopup()
     {
+        
         randomNum = Random.Range(0, pun.Length);
         punImage.sprite = pun[randomNum];
         punObject.SetActive(true);

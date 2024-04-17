@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    GameObject pauseCanvas;
+    public GameObject pauseCanvas;
     PauseMenu pauseMenu;
+
+    public int currentLevelnumber;
     // Start is called before the first frame update
     void Start()
     {
-        pauseCanvas = GameObject.Find("PhoneCanvas");
         pauseMenu = pauseCanvas.GetComponent<PauseMenu>();
     }
 
@@ -21,11 +22,21 @@ public class Collectible : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if(other.CompareTag("Player"))
         {
-            HallSceneManager.completeLevels++;
+            /*HallSceneManager.completeLevels++;
             Destroy(gameObject);
-            pauseMenu.UpdateScore();
+            pauseMenu.UpdateScore();*/
+
+            completeCurrentLevel();
+            Destroy(gameObject);
         }
+    }
+
+    public void completeCurrentLevel()
+    {
+        pauseMenu.currentLevel = currentLevelnumber;
+        pauseMenu.CompleteLevel();
     }
 }
