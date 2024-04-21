@@ -10,9 +10,10 @@ public class HallSceneManager : MonoBehaviour
     public GameObject player;
 
     public GameObject DomDoor;
-    public static int completeLevels = 0;
+    
     void Awake()
     {
+        
         spawnPointX = PlayerPrefs.GetFloat("SpawnX");
         spawnPointY = PlayerPrefs.GetFloat("SpawnY");
         player = GameObject.Find("/Player");
@@ -21,9 +22,9 @@ public class HallSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (completeLevels >= 2)
+        /*if (completeLevels >= 2)
         {
             DomDoor.SetActive(true);
-        }
+        }*/
     }
 }

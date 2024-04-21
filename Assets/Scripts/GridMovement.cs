@@ -12,6 +12,7 @@ public class GridMovement : MonoBehaviour
     public  Vector3 target;
     Vector3Int direction;
 
+
     void Awake()
     {
         if (grid == null)

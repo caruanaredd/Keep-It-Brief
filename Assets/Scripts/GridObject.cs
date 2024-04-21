@@ -7,6 +7,8 @@ public class GridObject : MonoBehaviour
     private const float MinDistanceFromTarget = 0.1f;
     private const float MovementSpeed = 4.25f;
     private bool reachedCell = true;
+
+    StepsCount steps;
     
     // The Grid Parent available to all objects
     protected static Grid GridParent { get; private set; }
@@ -47,6 +49,8 @@ public class GridObject : MonoBehaviour
         }
         
         _collider = GetComponent<Collider2D>();
+
+        steps = GetComponent<StepsCount>();
     }
     /// <summary>
     /// Extendable function which helps with initialization.
@@ -113,6 +117,8 @@ public class GridObject : MonoBehaviour
             var point = GridParent.CellToWorld(neighbor);
             if (direction.x != 0) point.y = _collider.bounds.center.y;
             if (direction.y != 0) point.x = _collider.bounds.center.x;
+            
+            //steps.Invoke("TakeAStep",0);
             
             others = Physics2D.OverlapBoxAll(point, size, 0).Where(col => !col.isTrigger).ToArray();
         } while (others.Any(col => col == _collider));
@@ -217,4 +223,5 @@ public class GridObject : MonoBehaviour
     {
         GUI.Label(new Rect(10, 10, 300, 50), IsMoving.ToString());
     }
+    
 }

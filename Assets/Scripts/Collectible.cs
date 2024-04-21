@@ -6,12 +6,15 @@ public class Collectible : MonoBehaviour
 {
     public GameObject pauseCanvas;
     PauseMenu pauseMenu;
+    Countdown countdown;
+    public GameObject HardCanvas;
 
     public int currentLevelnumber;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu = pauseCanvas.GetComponent<PauseMenu>();
+        countdown = HardCanvas.GetComponent<Countdown>();
     }
 
     // Update is called once per frame
@@ -25,18 +28,21 @@ public class Collectible : MonoBehaviour
 
         if(other.CompareTag("Player"))
         {
-            /*HallSceneManager.completeLevels++;
-            Destroy(gameObject);
-            pauseMenu.UpdateScore();*/
 
             completeCurrentLevel();
             Destroy(gameObject);
+            PauseMenu.completeLevels++;
+            pauseMenu.UpdateScore();
         }
     }
 
     public void completeCurrentLevel()
     {
         pauseMenu.currentLevel = currentLevelnumber;
+        if (currentLevelnumber == 3) //CHANGE TO CORRECT LEVEL
+        {
+            countdown.finishedLevel = true;
+        }
         pauseMenu.CompleteLevel();
     }
 }

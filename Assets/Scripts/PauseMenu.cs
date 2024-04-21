@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
+using Unity.Mathematics;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused;
 
     int briefsCollected;
+
+    public static int completeLevels = 0;
     public TextMeshProUGUI briefDisplay;
     // Start is called before the first frame update
 
@@ -25,6 +28,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Start()
     {
+        completeLevels = 0; //TEMPORARY FOR THE SAKE OF RESETTING
         isPaused = false;
         Time.timeScale = 1;
     }
@@ -59,8 +63,8 @@ public class PauseMenu : MonoBehaviour
 
     public void UpdateScore()
     {
-        briefsCollected = HallSceneManager.completeLevels;
-        briefDisplay.text = briefsCollected + "/2";
+        briefsCollected = completeLevels;
+        briefDisplay.text = briefsCollected + " / 4";
     }
 
     public void UnlockLevel()
