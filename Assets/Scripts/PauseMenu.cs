@@ -31,6 +31,8 @@ public class PauseMenu : MonoBehaviour
         completeLevels = 0; //TEMPORARY FOR THE SAKE OF RESETTING
         isPaused = false;
         Time.timeScale = 1;
+
+        level[0].color = new Color(1f,1f,1f,0f);
     }
 
     // Update is called once per frame
@@ -70,12 +72,16 @@ public class PauseMenu : MonoBehaviour
     public void UnlockLevel()
     {
         Debug.Log("Unlock" + currentLevel);
-        level[currentLevel].sprite = null;
+        if(currentLevel < 3)
+        {
+        level[currentLevel + 1].color = Color.clear;
+        }
     }
 
     public void CompleteLevel()
     {
         Debug.Log("Complete" + currentLevel);
+        level[currentLevel].color = Color.white;
         level[currentLevel].sprite = completed;
     }
 }

@@ -44,5 +44,6 @@ public class Collectible : MonoBehaviour
             countdown.finishedLevel = true;
         }
         pauseMenu.CompleteLevel();
+        pauseMenu.UnlockLevel();
     }
 }
