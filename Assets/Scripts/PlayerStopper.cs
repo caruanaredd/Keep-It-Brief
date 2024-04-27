@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStopper : TileBase
+public class PlayerStopper : CustomTileBase
 {
     public override void Trigger()
     {

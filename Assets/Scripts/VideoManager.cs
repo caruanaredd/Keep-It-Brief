@@ -20,7 +20,7 @@ public class VideoManager : MonoBehaviour
         videoCanvas.enabled = false;
 
         // Get the VideoPlayer component
-        videoPlayer = GetComponentInChildren<VideoPlayer>();
+        videoPlayer = GetComponentInChildren<VideoPlayer>();       
 
         // Check if videoPlayer is null
         if (videoPlayer == null)

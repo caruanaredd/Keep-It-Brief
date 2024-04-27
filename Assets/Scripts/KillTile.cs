@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillTile : TileBase
+public class KillTile : CustomTileBase
 {
     public override void Trigger()
     {

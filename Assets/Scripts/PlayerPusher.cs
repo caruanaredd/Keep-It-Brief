@@ -1,19 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
-public class PlayerPusher : TileBase
+[CreateAssetMenu(menuName = "Custom/Pusher Tile", fileName = "New Pusher Tile")]
+public class PlayerPusher : Tile
 {
     [SerializeField] private Direction direction;
-
-    public override void Trigger()
-    {
-        
-    }
-
-    public override void Trigger(Movement movement)
-    {
-        movement.Push(direction);
-        AudioManager.instance.PlaySoundEffect(3);
-    }
+    public Direction Direction => direction;
 }

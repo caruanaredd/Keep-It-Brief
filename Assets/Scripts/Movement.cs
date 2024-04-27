@@ -2,11 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : GridObject
 {
     public float speed;
+    public Tilemap directionTilemap;
     private Rigidbody2D player;
     private SpriteRenderer playerR;
     private Animator myAnimation;
@@ -22,6 +24,7 @@ public class Movement : GridObject
     private bool _isInteracting;
 
     private GridObject _holdingObject;
+
 
 
     // Start is called before the first frame update
@@ -101,6 +104,7 @@ public class Movement : GridObject
             if (!_isInteracting)
             {
                 direction = tmpDirection;
+                OnStopMoving();
                 Move(direction.ToVector3Int());
             }
             else
@@ -204,7 +208,7 @@ public class Movement : GridObject
             if (Vector2.Distance(transform.position, other.transform.position) > 1f)
                 return;
 
-            TileBase tile = other.GetComponent<TileBase>();
+            CustomTileBase tile = other.GetComponent<CustomTileBase>();
             tile.Trigger(this);
         }
         if (other.CompareTag("KillTile"))
@@ -212,7 +216,7 @@ public class Movement : GridObject
             //if (Vector2.Distance(transform.position, other.transform.position) > 0.5f)
                 //return;
 
-            TileBase tile = other.GetComponent<TileBase>();
+            CustomTileBase tile = other.GetComponent<CustomTileBase>();
             tile.Trigger(this);
         }
     }
@@ -256,7 +260,28 @@ public class Movement : GridObject
         }
     }
 
+    protected override void OnStopMoving()
+    {
+        var tile = directionTilemap.GetTile(Cell);
 
-    
+        if (tile is not PlayerPusher pusher)
+            return;
 
+        if (pusher.Direction == Direction.None)
+            return;
+
+        var offsetCell = pusher.Direction.ToVector3Int();
+        var nextTile = directionTilemap.GetTile(Cell + offsetCell);
+        
+        var limit = 20;
+        while (limit > 0 && (nextTile == null || nextTile is not PlayerPusher))
+        {
+            offsetCell += pusher.Direction.ToVector3Int();
+            nextTile = directionTilemap.GetTile(Cell + offsetCell);
+            limit--;
+        }
+
+        Move(offsetCell);
+        movement = Vector2.zero;
+    }
 }
