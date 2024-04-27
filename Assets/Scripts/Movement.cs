@@ -51,11 +51,6 @@ public class Movement : GridObject
     void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
-        // float horizontal = Input.GetAxis("Horizontal");
-        // float vertical = Input.GetAxis("Vertical");
-
-        // Vector2 movement = new Vector2(horizontal, vertical);
-        // movement.Normalize();
     }
 
     void MoveObject()
@@ -79,7 +74,7 @@ public class Movement : GridObject
             }
         }
 
-         // Store the direction in a temporary variable
+        // Store the direction in a temporary variable
         var tmpDirection = direction;
         if (movement.x > 0)
         {
@@ -131,8 +126,9 @@ public class Movement : GridObject
                 }
             }
 
-            myAnimation.SetFloat("Xaxis", movement.x);
-            myAnimation.SetFloat("Yaxis", movement.y);
+            var facingDirection = direction.ToVector3Int();
+            myAnimation.SetFloat("Xaxis", facingDirection.x);
+            myAnimation.SetFloat("Yaxis", facingDirection.y);
             playerR.flipX = direction == Direction.Left;
         }
 
@@ -265,7 +261,12 @@ public class Movement : GridObject
         var tile = directionTilemap.GetTile(Cell);
 
         if (tile is not PlayerPusher pusher)
+        {
+            // Will trigger the character to stop moving
+            myAnimation.SetFloat("Xaxis", movement.x);
+            myAnimation.SetFloat("Yaxis", movement.y);
             return;
+        }
 
         if (pusher.Direction == Direction.None)
             return;
@@ -283,5 +284,8 @@ public class Movement : GridObject
 
         Move(offsetCell);
         movement = Vector2.zero;
+        
+        myAnimation.SetFloat("Xaxis", movement.x);
+        myAnimation.SetFloat("Yaxis", movement.y);
     }
 }

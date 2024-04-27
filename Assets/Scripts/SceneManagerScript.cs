@@ -6,11 +6,18 @@ using UnityEngine.Video;
 public class SceneManagerScript : MonoBehaviour
 {
     public VideoPlayer transitionVideo; // Reference to your VideoPlayer component
-    public int nextSceneIndex; // Index of the scene to load after the video
+    private int nextSceneIndex; // Index of the scene to load after the video
+    private Canvas canvasComponent;
 
-    public void LoadScene(int i)
+    private void Awake()
     {
-        // StartCoroutine(PlayVideoAndLoadScene(i));
+        canvasComponent = GetComponent<Canvas>();
+    }
+
+    // Sets the next scene to load.
+    public void SetNextScene(int nextScene)
+    {
+        nextSceneIndex = nextScene;
     }
 
     public void PlaySelectionVideo(VideoPlayer videoPlayer)
@@ -25,6 +32,10 @@ public class SceneManagerScript : MonoBehaviour
 
     private IEnumerator PlayVideoAndLoadScene(VideoPlayer videoPlayer)
     {
+        // Disabling the canvas will put the video in front
+        canvasComponent.enabled = false;
+        
+        videoPlayer.Prepare();
         videoPlayer.Play();
 
         // Wait for the video to finish playing
@@ -40,6 +51,7 @@ public class SceneManagerScript : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log(transitionVideo.isPlaying);
         // Load the next scene
         SceneManager.LoadScene(nextSceneIndex);
     }

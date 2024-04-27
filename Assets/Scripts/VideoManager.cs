@@ -1,36 +1,25 @@
 using System.Collections;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Video;
 
+[RequireComponent(typeof(VideoPlayer))]
 public class VideoManager : MonoBehaviour
 {
     public static VideoManager instance; // Singleton instance
 
-    public Canvas videoCanvas; // Assign this in the Inspector
+    [SerializeField] private CinemachineVirtualCamera offWorldCamera;
+    private CinemachineBrain _cinemachineBrain;
+    
     private VideoPlayer videoPlayer;
 
     private void Awake()
     {
-        // Check if videoCanvas is null
-        if (videoCanvas == null)
-        {
-            Debug.LogError("Canvas not assigned! Assign 'videoCanvas' in the Inspector.");
-            return;
-        }
-        videoCanvas.enabled = false;
+        _cinemachineBrain = FindObjectOfType<CinemachineBrain>();
 
         // Get the VideoPlayer component
-        videoPlayer = GetComponentInChildren<VideoPlayer>();       
-
-        // Check if videoPlayer is null
-        if (videoPlayer == null)
-        {
-            Debug.LogError("VideoPlayer component not found within the assigned Canvas.");
-            return;
-        }
-
-        // Set the sorting order to ensure the video is displayed on top of everything
-        videoCanvas.sortingOrder = 100;
+        videoPlayer = GetComponentInChildren<VideoPlayer>();
+        videoPlayer.Prepare();
     }
 
     private void OnEnable()
@@ -43,7 +32,6 @@ public class VideoManager : MonoBehaviour
         else
         {
             DestroyImmediate(gameObject);
-            return;
         }
     }
 
@@ -62,22 +50,24 @@ public class VideoManager : MonoBehaviour
 
     private IEnumerator PlayVideoRoutine()
     {
-       // Activate the video Canvas
-    videoCanvas.enabled = true;
+        // Start playing the video
+        videoPlayer.Play();
 
-    // Start playing the video
-    videoPlayer.Play();
+        // Move the camera out of the world
+        _cinemachineBrain.m_DefaultBlend.m_Time = 0;
+        offWorldCamera.Priority = 1000;
 
-    while (videoPlayer.isPlaying)
-    {
-        yield return null;
-    }
+        while (videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
 
-    // Stop the video and reset its time position
-    videoPlayer.Stop();
-    videoPlayer.time = 0f;
+        // Prepare the video for another viewing
+        videoPlayer.Stop();
+        videoPlayer.Prepare();
 
-    // Deactivate the video Canvas
-    videoCanvas.enabled = false;
+        // Restore the Cinemachine brain
+        offWorldCamera.Priority = -1;
+        _cinemachineBrain.m_DefaultBlend.m_Time = _cinemachineBrain.m_DefaultBlend.BlendTime;
     }
 }

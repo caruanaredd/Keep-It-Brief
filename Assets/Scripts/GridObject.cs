@@ -212,9 +212,11 @@ public class GridObject : MonoBehaviour
         Cell = destination;
         transform.position = _targetPosition;
     }
-
+    
+#if TESTING
     private void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 300, 50), IsMoving.ToString());
     }
+#endif
 }

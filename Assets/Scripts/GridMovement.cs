@@ -52,7 +52,8 @@ public class GridMovement : MonoBehaviour
     {
         direction = dir;
     }
-
+    
+#if TESTING
     private void OnGUI()
     {
         var neighbor = cellPosition + direction;
@@ -63,6 +64,7 @@ public class GridMovement : MonoBehaviour
         GUI.skin.label.fontSize = 30;
         GUI.Label(new Rect(10, 10, 500, 100), $"Neighbor in the way: {collider?.name}");
     }
+#endif
 
     private void OnDrawGizmos()
     {
